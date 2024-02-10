@@ -1,0 +1,25 @@
+{
+    "deploy": [
+        "../deploy.md"
+    ],
+    "docs": "",
+    "features": [
+        "BLE",
+        "Ethernet",
+        "External Flash",
+        "WiFi"
+    ],
+    "images": [
+        "",
+        ""
+    ],
+    "mcu": "esp32",
+    "product": "WROVER",
+    "thumbnail": "",
+    "url": "https://www.espressif.com/en/products/modules",
+    "variants": {
+      "OTA": "Support for OTA",
+      "OTA_USER": "Support for OTA and USER dir"
+    },
+    "vendor": "Espressif"
+}
