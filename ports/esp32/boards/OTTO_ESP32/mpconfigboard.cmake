@@ -5,6 +5,39 @@ set(SDKCONFIG_DEFAULTS
     boards/OTTO_ESP32/sdkconfig.board
 )
 
+if(MICROPY_BOARD_VARIANT STREQUAL "8M")
+    set(SDKCONFIG_DEFAULTS
+            ${SDKCONFIG_DEFAULTS}
+            boards/OTTO_ESP32/sdkconfig.8m
+    )
+
+    list(APPEND MICROPY_DEF_BOARD
+            MICROPY_HW_BOARD_NAME="OTTO_ESP32 8MB module"
+    )
+endif()
+
+if(MICROPY_BOARD_VARIANT STREQUAL "16M")
+    set(SDKCONFIG_DEFAULTS
+            ${SDKCONFIG_DEFAULTS}
+            boards/OTTO_ESP32/sdkconfig.16m
+    )
+
+    list(APPEND MICROPY_DEF_BOARD
+            MICROPY_HW_BOARD_NAME="OTTO_ESP32 16MB module"
+    )
+endif()
+
+if(MICROPY_BOARD_VARIANT STREQUAL "USER")
+    set(SDKCONFIG_DEFAULTS
+            ${SDKCONFIG_DEFAULTS}
+            boards/OTTO_ESP32/sdkconfig.user
+    )
+
+    list(APPEND MICROPY_DEF_BOARD
+            MICROPY_HW_BOARD_NAME="OTTO_ESP32 4MB module with USER partition"
+    )
+endif()
+
 if(MICROPY_BOARD_VARIANT STREQUAL "USER")
     set(SDKCONFIG_DEFAULTS
             ${SDKCONFIG_DEFAULTS}
