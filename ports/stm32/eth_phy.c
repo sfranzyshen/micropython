@@ -3,7 +3,8 @@
  *
  * The MIT License (MIT)
  *
- * Copyright (c) 2022 Angus Gratton
+ * Copyright (c) 2019 Damien P. George
+ * Copyright (c) 2024 Robert Hammelrath
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,12 +24,36 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-#ifndef MICROPY_INCLUDED_SHARED_TINYUSB_MP_USBD_INTERNAL_H
-#define MICROPY_INCLUDED_SHARED_TINYUSB_MP_USBD_INTERNAL_H
-#include "tusb.h"
 
-// Static USB device descriptor values
-extern const tusb_desc_device_t mp_usbd_desc_device_static;
-extern const uint8_t mp_usbd_desc_cfg_static[USBD_STATIC_DESC_LEN];
+#include "py/mphal.h"
+#include "eth_phy.h"
 
-#endif // MICROPY_INCLUDED_SHARED_TINYUSB_MP_USBD_INTERNAL_H
+#if defined(MICROPY_HW_ETH_MDC)
+
+#define PHY_SCSR_LAN87XX                (0x001f)
+#define PHY_SCSR_LAN87XX_SPEED_Pos      (2)
+#define PHY_SCSR_LAN87XX_SPEED_Msk      (7)
+
+#define PHY_SCSR_DP838XX                (0x0010)
+#define PHY_RECR_DP838XX                (0x0015)
+#define PHY_SCSR_DP838XX_DUPLEX_Msk     (4)
+#define PHY_SCSR_DP838XX_10M_Msk        (2)
+
+int16_t eth_phy_lan87xx_get_link_status(uint32_t phy_addr) {
+    // Get the link mode & speed
+    int16_t scsr = eth_phy_read(phy_addr, PHY_SCSR_LAN87XX);
+    return (scsr >> PHY_SCSR_LAN87XX_SPEED_Pos) & PHY_SCSR_LAN87XX_SPEED_Msk;
+}
+
+int16_t eth_phy_dp838xx_get_link_status(uint32_t phy_addr) {
+    int16_t scsr = 0;
+    // Get the link mode & speed
+    uint16_t temp = eth_phy_read(phy_addr, PHY_SCSR_DP838XX);
+    scsr = (temp & PHY_SCSR_DP838XX_10M_Msk) ? PHY_SPEED_10HALF : PHY_SPEED_100HALF;
+    if (temp & PHY_SCSR_DP838XX_DUPLEX_Msk) {
+        scsr |= PHY_DUPLEX;
+    }
+    return scsr;
+}
+
+#endif
