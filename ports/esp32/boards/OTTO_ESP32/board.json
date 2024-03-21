@@ -1,0 +1,27 @@
+{
+    "deploy": [
+        "../deploy.md"
+    ],
+    "docs": "",
+    "features": [
+        "BLE",
+        "External Flash",
+        "WiFi"
+    ],
+    "images": [
+        ""
+    ],
+    "mcu": "esp32",
+    "product": "ESP32 / WROOM",
+    "thumbnail": "",
+    "url": "https://www.espressif.com/en/products/modules",
+    "variants": {
+      "USER": "Support for 4MB Flash and USER partition"
+      "USER_8M": "Support for 8MB Flash and USER partition"
+      "USER_16M": "Support for 16MB Flash and USER partition"
+      "USER_OTA": "Support for OTA and USER partition"
+      "USER_OTA_8MB": "Support for 8MB Flash, OTA, and USER partition"
+      "USER_OTA_16MB": "Support for 16MB Flash, OTA, and USER partition"
+    },
+    "vendor": "Espressif"
+}
