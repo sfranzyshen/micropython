@@ -16,7 +16,6 @@
     "product": "ESP32-S3",
     "thumbnail": "",
     "url": "https://www.espressif.com/en/products/modules",
-    "vendor": "Espressif",
     "variants": {
       "8M": "Support for 8MB Flash"
       "16M": "Support for 16MB Flash"
@@ -27,5 +26,5 @@
       "USER_OTA_8MB": "Support for 8MB Flash, OTA, and USER partition"
       "USER_OTA_16MB": "Support for 16MB Flash, OTA, and USER partition"
     },
-    }
+    "vendor": "Espressif"
 }
