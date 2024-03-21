@@ -27,3 +27,14 @@ if(MICROPY_BOARD_VARIANT STREQUAL "OTA_USER")
     )
 endif()
 
+if(MICROPY_BOARD_VARIANT STREQUAL "USER")
+    set(SDKCONFIG_DEFAULTS
+            ${SDKCONFIG_DEFAULTS}
+            boards/WROVER_16M/sdkconfig.user
+    )
+
+    list(APPEND MICROPY_DEF_BOARD
+            MICROPY_HW_BOARD_NAME="Wrover 16M module with USER filesys"
+    )
+endif()
+

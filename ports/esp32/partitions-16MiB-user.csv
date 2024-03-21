@@ -4,9 +4,6 @@
 # Name,     Type, SubType, Offset,   Size, Flags
 nvs,        data, nvs,     0x9000,   0x6000,
 phy_init,   data, phy,     0xf000,   0x1000,
-ota_0,      app,  ota_0,   0x10000,  0x280000,
-ota_1,      app,  ota_1,   0x290000, 0x280000,
-otadata,    data, ota,     0x510000, 0x2000,
-eeprom,     data, fat,     0x512000, 0xe000,
-vfs,        data, fat,     0x520000, 0x200000,
-user,       data, fat,     0x720000, 0x8e0000,
+factory,    app,  factory, 0x10000,  0x280000,
+vfs,        data, fat,     0x290000, 0x800000,
+user,       data, fat,     0xa90000, 0x570000,
