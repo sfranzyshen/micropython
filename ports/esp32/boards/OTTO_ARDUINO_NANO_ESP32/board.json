@@ -1,0 +1,31 @@
+{
+    "deploy": [
+        "deploy.md"
+    ],
+    "docs": "",
+    "features": [
+        "BLE",
+        "External Flash",
+        "RGB LED",
+        "USB-C",
+        "WiFi"
+    ],
+    "images": [
+        "ABX00092_01.iso_1000x750.jpg"
+    ],
+    "mcu": "esp32s3",
+    "product": "Arduino Nano ESP32",
+    "thumbnail": "",
+    "url": "https://store.arduino.cc/products/arduino-nano-esp32",
+    "variants": {
+      "8M": "Support for 8MB Flash"
+      "16M": "Support for 16MB Flash"
+      "USER": "Support for 4MB Flash and USER partition"
+      "USER_8M": "Support for 8MB Flash and USER partition"
+      "USER_16M": "Support for 16MB Flash and USER partition"
+      "USER_OTA": "Support for OTA and USER partition"
+      "USER_OTA_8MB": "Support for 8MB Flash, OTA, and USER partition"
+      "USER_OTA_16MB": "Support for 16MB Flash, OTA, and USER partition"
+    },
+    "vendor": "Arduino"
+}
