@@ -41,17 +41,6 @@ if(MICROPY_BOARD_VARIANT STREQUAL "USER")
     )
 endif()
 
-if(MICROPY_BOARD_VARIANT STREQUAL "USER")
-    set(SDKCONFIG_DEFAULTS
-            ${SDKCONFIG_DEFAULTS}
-            boards/OTTO_ESP32_S3/sdkconfig.user
-    )
-
-    list(APPEND MICROPY_DEF_BOARD
-            MICROPY_HW_BOARD_NAME="OTTO_ESP32_S3 4MB module with USER partition"
-    )
-endif()
-
 if(MICROPY_BOARD_VARIANT STREQUAL "USER_8M")
     set(SDKCONFIG_DEFAULTS
             ${SDKCONFIG_DEFAULTS}
