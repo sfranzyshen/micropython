@@ -16,12 +16,8 @@
     "thumbnail": "",
     "url": "https://www.espressif.com/en/products/modules",
     "variants": {
-      "8M": "Support for 8MB Flash"
-      "16M": "Support for 16MB Flash"
-      "USER": "Support for 4MB Flash and USER partition"
       "USER_8M": "Support for 8MB Flash and USER partition"
       "USER_16M": "Support for 16MB Flash and USER partition"
-      "USER_OTA": "Support for OTA and USER partition"
       "USER_OTA_8MB": "Support for 8MB Flash, OTA, and USER partition"
       "USER_OTA_16MB": "Support for 16MB Flash, OTA, and USER partition"
     },
